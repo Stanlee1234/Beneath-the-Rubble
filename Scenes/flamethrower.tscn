@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://os56oxs1ak1t"]
 
 [ext_resource type="Texture2D" uid="uid://ro5fnwjpcee" path="res://Assets/Background/Traps/Flamethrower.png" id="1_o6cut"]
+[ext_resource type="Script" uid="uid://dk8ol86tualbn" path="res://Scripts/flamethrower.gd" id="1_qo5i5"]
 
 [sub_resource type="Animation" id="Animation_o6cut"]
 length = 0.001
@@ -15,6 +16,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionPolygon2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_qo5i5"]
@@ -34,6 +47,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 4, 5, 4, 5, 4, 5, 4, 3, 2, 1, 0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionPolygon2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.125),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v41g3"]
 _data = {
@@ -42,6 +67,8 @@ _data = {
 }
 
 [node name="Flamethrower" type="Node2D" unique_id=1941821412]
+scale = Vector2(16, 16)
+script = ExtResource("1_qo5i5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1471208543]
 position = Vector2(0, -15)
@@ -50,3 +77,12 @@ hframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=742420550]
 libraries/ = SubResource("AnimationLibrary_v41g3")
+autoplay = &"fire"
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=551920263]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox" unique_id=222688043]
+polygon = PackedVector2Array(0, -28, -3, -20, -3, -10, -1, -4, 2, -4, 4, -10, 4, -20, 1, -28)
+disabled = true
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

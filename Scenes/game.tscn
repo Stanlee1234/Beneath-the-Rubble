@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bpt12jpyb5vb" path="res://Scenes/player.tscn" id="1_qxrlw"]
 [ext_resource type="Texture2D" uid="uid://rlh88t73ussr" path="res://Assets/Background/CaveTilemap.png" id="2_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://os56oxs1ak1t" path="res://Scenes/flamethrower.tscn" id="3_wrm1d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxrlw"]
 texture = ExtResource("2_wrm1d")
@@ -217,3 +218,6 @@ tile_map_data = PackedByteArray("AAADAAIAAAACAAMAAAADAAEAAAACAAIAAAADAAAAAAACAAI
 tile_set = SubResource("TileSet_wrm1d")
 
 [node name="Player" parent="." unique_id=46163778 instance=ExtResource("1_qxrlw")]
+
+[node name="Flamethrower" parent="." unique_id=1941821412 instance=ExtResource("3_wrm1d")]
+position = Vector2(1280, -256)

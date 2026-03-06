@@ -1,16 +1,42 @@
 extends CharacterBody2D
 
-@export var speed: float = 200.0 
+@export var speed: float = 900.0 
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-# We add this to remember which way the player was facing when they stop moving
 var last_direction: Vector2 = Vector2.DOWN 
 
-func _physics_process(_delta: float) -> void:
-	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+# This array acts as our "stack" to remember the order of keys pressed
+var input_stack: Array[String] = []
+
+# _input runs exactly when a key is pressed or released
+func _input(event: InputEvent) -> void:
+	var actions = ["ui_left", "ui_right", "ui_up", "ui_down"]
 	
-	# If the player is pressing a movement key, update the last_direction
+	for action in actions:
+		if event.is_action_pressed(action):
+			# If pressed, add it to the end of the stack
+			if not input_stack.has(action):
+				input_stack.append(action)
+		elif event.is_action_released(action):
+			# If released, remove it from the stack
+			input_stack.erase(action)
+
+func _physics_process(_delta: float) -> void:
+	var input_direction = Vector2.ZERO
+	
+	# If we are holding any keys, the active key is the last one we pressed
+	if input_stack.size() > 0:
+		var current_action = input_stack.back() # Gets the most recent key
+		
+		# Apply movement based on that single most recent key
+		match current_action:
+			"ui_left": input_direction.x = -1
+			"ui_right": input_direction.x = 1
+			"ui_up": input_direction.y = -1
+			"ui_down": input_direction.y = 1
+	
+	# Update the direction we are facing for the idle animations
 	if input_direction != Vector2.ZERO:
 		last_direction = input_direction
 	
@@ -20,9 +46,7 @@ func _physics_process(_delta: float) -> void:
 	update_animation(input_direction)
 
 func update_animation(direction: Vector2) -> void:
-	# 1. IDLE STATE: Player is not moving
 	if direction == Vector2.ZERO:
-		# Use last_direction to figure out which idle animation to play
 		if abs(last_direction.x) > abs(last_direction.y):
 			sprite.play("idleSide")
 			sprite.flip_h = last_direction.x < 0
@@ -33,7 +57,6 @@ func update_animation(direction: Vector2) -> void:
 				sprite.play("idleUp")
 		return
 
-	# 2. WALKING STATE: Player is moving
 	if abs(direction.x) > abs(direction.y):
 		sprite.play("walkSide")
 		sprite.flip_h = direction.x < 0

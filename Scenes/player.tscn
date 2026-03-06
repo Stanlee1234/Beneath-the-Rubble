@@ -3,6 +3,22 @@
 [ext_resource type="Script" uid="uid://c6f4244diy8hb" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://blhgc7k686g80" path="res://Assets/Characters/Dwarf/YellowMiner.png" id="1_v0iea"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6n3p"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(0, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olqyp"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(48, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpjfl"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(96, 192, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi64h"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(144, 192, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("1_v0iea")
 region = Rect2(0, 0, 48, 48)
@@ -77,6 +93,23 @@ region = Rect2(144, 48, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l6n3p"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6n3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olqyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpjfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi64h")
+}],
+"loop": false,
+"name": &"attackDown",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cvnsp")
@@ -163,7 +196,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_olqyp"]
-size = Vector2(9, 15)
+size = Vector2(6, 9)
 
 [node name="Player" type="CharacterBody2D" unique_id=46163778]
 scale = Vector2(16, 16)
@@ -171,9 +204,11 @@ script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=311676538]
 sprite_frames = SubResource("SpriteFrames_l6n3p")
-animation = &"idleSide"
-frame_progress = 0.65249205
+animation = &"attackDown"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081622274]
-position = Vector2(-0.5, 0.5)
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_olqyp")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1580152133]
+zoom = Vector2(0.5, 0.5)

@@ -82,7 +82,7 @@ autoplay = &"fire"
 [node name="Hitbox" type="Area2D" parent="." unique_id=551920263]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox" unique_id=222688043]
-polygon = PackedVector2Array(0, -28, -3, -20, -3, -10, -1, -4, 2, -4, 4, -10, 4, -20, 1, -28)
+polygon = PackedVector2Array(0, -21, -3, -20, -3, -10, -1, -4, 2, -4, 4, -10, 4, -20, 1, -21)
 disabled = true
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

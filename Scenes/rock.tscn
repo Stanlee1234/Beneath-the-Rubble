@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ctpcx5bpf3jwh"]
+
+[ext_resource type="Script" uid="uid://crgmqaacwm8tl" path="res://Scripts/rock.gd" id="1_5mkji"]
+[ext_resource type="Texture2D" uid="uid://rlh88t73ussr" path="res://Assets/Background/CaveTilemap.png" id="1_lgx4v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vd8au"]
+radius = 4.0
+
+[node name="Rock" type="StaticBody2D" unique_id=828452961]
+scale = Vector2(16, 16)
+script = ExtResource("1_5mkji")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=233222043]
+texture = ExtResource("1_lgx4v")
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2(96, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=484063404]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_vd8au")

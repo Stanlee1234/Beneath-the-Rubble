@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://lqxiav5pjqil"]
+[gd_scene format=3 uid="uid://cux1g268nibtq"]
 
 [ext_resource type="Script" uid="uid://c6f4244diy8hb" path="res://Scripts/player.gd" id="1_x88p5"]
 [ext_resource type="Texture2D" uid="uid://bong8fkv2la2d" path="res://Assets/Characters/Dwarf/BlueMiner.png" id="2_x88p5"]

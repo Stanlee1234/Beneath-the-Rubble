@@ -190,7 +190,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"swingSide",
-"speed": 8.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -207,7 +207,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"swingUp",
-"speed": 8.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -270,9 +270,7 @@ script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=311676538]
 sprite_frames = SubResource("SpriteFrames_l6n3p")
-animation = &"swingDown"
-frame = 3
-frame_progress = 1.0
+animation = &"swingUp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081622274]
 position = Vector2(0, 3.5)
@@ -280,9 +278,3 @@ shape = SubResource("RectangleShape2D_olqyp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1580152133]
 zoom = Vector2(0.5, 0.5)
-
-[node name="WeaponPivot" type="Node2D" parent="." unique_id=418923151]
-scale = Vector2(0.7, 0.7)
-
-[node name="WeaponSprite" type="Sprite2D" parent="WeaponPivot" unique_id=529847408]
-position = Vector2(1.4901161e-08, 0)

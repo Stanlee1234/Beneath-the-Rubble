@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cux1g268nibtq"]
+
+[ext_resource type="Script" uid="uid://c6f4244diy8hb" path="res://Scripts/player.gd" id="1_x88p5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l6n3p"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idleDown",
+"speed": 1.5
+}, {
+"frames": [],
+"loop": true,
+"name": &"idleSide",
+"speed": 1.5
+}, {
+"frames": [],
+"loop": true,
+"name": &"idleUp",
+"speed": 1.5
+}, {
+"frames": [],
+"loop": false,
+"name": &"swingDown",
+"speed": 16.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"swingSide",
+"speed": 16.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"swingUp",
+"speed": 16.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walkDown",
+"speed": 4.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walkSide",
+"speed": 4.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walkUp",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olqyp"]
+size = Vector2(6, 9)
+
+[node name="Player" type="CharacterBody2D" unique_id=46163778]
+scale = Vector2(13, 13)
+script = ExtResource("1_x88p5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=311676538]
+sprite_frames = SubResource("SpriteFrames_l6n3p")
+animation = &"walkUp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081622274]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_olqyp")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1580152133]
+zoom = Vector2(0.5, 0.5)

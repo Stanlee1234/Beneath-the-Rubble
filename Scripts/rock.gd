@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 # 4 strikes * 10 damage = 40 health
-@export var health: int = 40 
+@export var health: int = 40
 
 @onready var sprite: Sprite2D = $Sprite2D
 

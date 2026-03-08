@@ -265,10 +265,11 @@ animations = [{
 size = Vector2(6, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndhuy"]
-size = Vector2(9.846153, 5.0769234)
+size = Vector2(9.846153, 12.923078)
 
 [node name="Player" type="CharacterBody2D" unique_id=46163778]
 scale = Vector2(13, 13)
+collision_mask = 22
 script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=311676538]
@@ -283,8 +284,11 @@ shape = SubResource("RectangleShape2D_olqyp")
 zoom = Vector2(0.5, 0.5)
 
 [node name="ActionHitbox" type="Area2D" parent="." unique_id=436948933]
+collision_layer = 8
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActionHitbox" unique_id=582952547]
+position = Vector2(0, 1.5384614)
 shape = SubResource("RectangleShape2D_ndhuy")
 
 [connection signal="body_entered" from="ActionHitbox" to="." method="_on_action_hitbox_body_entered"]

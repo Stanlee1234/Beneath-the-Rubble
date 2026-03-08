@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var speed: float = 900.0 
-@export var hitbox_reach: float = 24.0 
+@export var speed: float = 2000.0 
+@export var hitbox_reach: float = 5.0 
 @export var invincibility_duration: float = 0.4 # How long you are invincible after a hit
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -130,7 +130,7 @@ func take_damage(amount: int, hazard_position: Vector2) -> void:
 	is_invincible = true
 	is_knocked_back = true
 	is_busy = false 
-	hitbox_shape.disabled = true 
+	hitbox_shape.set_deferred("disabled", true) # Turn it off SAFELY!
 	
 	print("Player took ", amount, " damage!")
 	

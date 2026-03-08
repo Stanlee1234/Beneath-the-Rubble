@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://b1ab32f431lef"]
 
-[ext_resource type="PackedScene" uid="uid://bpt12jpyb5vb" path="res://Scenes/player1.tscn" id="1_qxrlw"]
-[ext_resource type="Texture2D" uid="uid://bm2cdiokx3lw4" path="res://Assets/Background/Decor/FireFlame.png" id="2_3dryh"]
-[ext_resource type="Texture2D" uid="uid://rlh88t73ussr" path="res://Assets/Background/CaveTilemap.png" id="2_wrm1d"]
-[ext_resource type="PackedScene" uid="uid://os56oxs1ak1t" path="res://Scenes/flamethrower.tscn" id="3_wrm1d"]
-[ext_resource type="PackedScene" uid="uid://ctpcx5bpf3jwh" path="res://Scenes/rock.tscn" id="5_wowpa"]
+[ext_resource type="Texture2D" uid="uid://rlh88t73ussr" path="res://Assets/Background/CaveTilemap.png" id="1_h10oq"]
+[ext_resource type="Texture2D" uid="uid://bm2cdiokx3lw4" path="res://Assets/Background/Decor/FireFlame.png" id="2_s3oar"]
+[ext_resource type="PackedScene" uid="uid://ctpcx5bpf3jwh" path="res://Scenes/rock.tscn" id="3_sa86c"]
+[ext_resource type="PackedScene" uid="uid://os56oxs1ak1t" path="res://Scenes/flamethrower.tscn" id="4_f0jvk"]
+[ext_resource type="PackedScene" uid="uid://bpt12jpyb5vb" path="res://Scenes/player1.tscn" id="5_2ttum"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxrlw"]
-texture = ExtResource("2_wrm1d")
+texture = ExtResource("1_h10oq")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 1:0/0 = 0
@@ -197,13 +197,13 @@ texture = ExtResource("2_wrm1d")
 7:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wowpa"]
-texture = ExtResource("2_3dryh")
+texture = ExtResource("2_s3oar")
 0:0/animation_frame_0/duration = 1.0
 0:0/animation_frame_1/duration = 1.0
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_wrm1d"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Dirt"
 terrain_set_0/terrain_0/color = Color(0.27370948, 0.43654928, 0.2092402, 1)
@@ -226,10 +226,10 @@ scale = Vector2(16, 16)
 tile_map_data = PackedByteArray("AAADAAIAAAACAAMAAAADAAEAAAACAAIAAAADAAAAAAACAAIAAAADAP//AAACAAIAAAADAP7/AAABAAIAAAADAP3/AAABAAIAAAACAAIAAAABAAMAAAACAAEAAAABAAIAAAACAAAAAAABAAIAAAACAP//AAABAAIAAAACAP7/AAABAAIAAAACAP3/AAABAAIAAAABAAIAAAABAAMAAAABAAEAAAABAAIAAAABAAAAAAABAAIAAAABAP//AAABAAIAAAABAP7/AAABAAIAAAABAP3/AAABAAIAAAAAAAIAAAABAAMAAAAAAAEAAAABAAIAAAAAAAAAAAABAAIAAAAAAP//AAABAAIAAAAAAP7/AAABAAIAAAAAAP3/AAABAAEAAAD//wIAAAABAAMAAAD//wEAAAABAAIAAAD//wAAAAABAAIAAAD/////AAABAAIAAAD///7/AAABAAIAAAD///3/AAABAAEAAAD+/wIAAAAAAAMAAAD+/wEAAAAAAAIAAAD+/wAAAAAAAAIAAAD+////AAAAAAIAAAD+//7/AAAAAAIAAAD+//3/AAAAAAEAAAAEAP7/AAACAAMAAAAEAP3/AAACAAIAAAAEAPz/AAACAAIAAAADAPz/AAABAAIAAAACAPz/AAABAAIAAAABAPz/AAAAAAIAAAAEAPv/AAACAAIAAAADAPv/AAABAAIAAAACAPv/AAABAAIAAAABAPv/AAAAAAIAAAAEAPr/AAACAAEAAAADAPr/AAABAAEAAAACAPr/AAABAAEAAAABAPr/AAAAAAEAAAD+//r/AAAAAAUAAAD+//v/AAAAAAUAAAD+//z/AAAAAAUAAAD///r/AAAAAAUAAAD///v/AAAAAAUAAAD///z/AAAAAAUAAAAAAPr/AAAAAAUAAAAAAPv/AAAAAAUAAAAAAPz/AAAAAAUAAAD7//r/AAAAAAUAAAD7//v/AAAAAAUAAAD7//z/AAAAAAUAAAD7//3/AAAAAAUAAAD7//7/AAAAAAUAAAD7////AAAAAAUAAAD7/wAAAAAAAAUAAAD7/wEAAAAAAAUAAAD8//r/AAAAAAUAAAD8//v/AAAAAAUAAAD8//z/AAAAAAUAAAD8//3/AAAAAAUAAAD8//7/AAAAAAUAAAD8////AAAAAAUAAAD8/wAAAAAAAAUAAAD8/wEAAAAAAAUAAAD9//r/AAAAAAUAAAD9//v/AAAAAAUAAAD9//z/AAAAAAUAAAD9//3/AAAAAAUAAAD9//7/AAAAAAUAAAD9////AAAAAAUAAAD9/wAAAAAAAAUAAAD9/wEAAAAAAAUAAAD7/wIAAAAAAAUAAAD7/wMAAAAAAAUAAAD7/wQAAAAAAAUAAAD8/wIAAAAAAAUAAAD8/wMAAAAAAAUAAAD8/wQAAAAAAAUAAAD9/wIAAAAAAAUAAAD9/wMAAAAAAAUAAAD9/wQAAAAAAAUAAAD+/wMAAAAAAAUAAAD+/wQAAAAAAAUAAAD//wMAAAAAAAUAAAD//wQAAAAAAAUAAAAAAAMAAAAAAAUAAAAAAAQAAAAAAAUAAAABAAMAAAAAAAUAAAABAAQAAAAAAAUAAAACAAMAAAAAAAUAAAACAAQAAAAAAAUAAAADAAMAAAAAAAUAAAADAAQAAAAAAAUAAAAEAAMAAAAAAAUAAAAEAAQAAAAAAAUAAAAFAAMAAAAAAAUAAAAFAAQAAAAAAAUAAAAEAP//AAAAAAUAAAAEAAAAAAAAAAUAAAAEAAEAAAAAAAUAAAAEAAIAAAAAAAUAAAAFAP//AAAAAAUAAAAFAAAAAAAAAAUAAAAFAAEAAAAAAAUAAAAFAAIAAAAAAAUAAAAGAPr/AAAAAAUAAAAGAPv/AAAAAAUAAAAGAPz/AAAAAAUAAAAGAP3/AAAAAAUAAAAGAP7/AAAAAAUAAAAGAP//AAAAAAUAAAAGAAAAAAAAAAUAAAAHAPr/AAAAAAUAAAAHAPv/AAAAAAUAAAAHAPz/AAAAAAUAAAAHAP3/AAAAAAUAAAAHAP7/AAAAAAUAAAAHAP//AAAAAAUAAAAHAAAAAAAAAAUAAAAFAPr/AAAAAAUAAAAFAPv/AAAAAAUAAAAFAPz/AAAAAAUAAAAFAP3/AAAAAAUAAAAFAP7/AAAAAAUAAAD+//f/AAAAAAUAAAD+//j/AAAAAAUAAAD+//n/AAAAAAUAAAD///f/AAAAAAUAAAD///j/AAAAAAUAAAD///n/AAAAAAUAAAAAAPf/AAAAAAUAAAAAAPj/AAAAAAUAAAAAAPn/AAAAAAUAAAABAPf/AAAAAAUAAAABAPj/AAAAAAUAAAABAPn/AAAAAAAAAAACAPf/AAAAAAUAAAACAPj/AAAAAAUAAAACAPn/AAABAAAAAAADAPf/AAAAAAUAAAADAPj/AAAAAAUAAAADAPn/AAABAAAAAAAEAPf/AAAAAAUAAAAEAPj/AAAAAAUAAAAEAPn/AAACAAAAAAAFAPf/AAAAAAUAAAAFAPj/AAAAAAUAAAAFAPn/AAAAAAUAAAAGAPf/AAAAAAUAAAAGAPj/AAAAAAUAAAAGAPn/AAAAAAUAAAAHAPf/AAAAAAUAAAAHAPj/AAAAAAUAAAAHAPn/AAAAAAUAAAA=")
 tile_set = SubResource("TileSet_wrm1d")
 
-[node name="Rock" parent="." unique_id=828452961 instance=ExtResource("5_wowpa")]
+[node name="Rock" parent="." unique_id=828452961 instance=ExtResource("3_sa86c")]
 position = Vector2(256, -512)
 
-[node name="Flamethrower" parent="." unique_id=1941821412 instance=ExtResource("3_wrm1d")]
+[node name="Flamethrower" parent="." unique_id=1941821412 instance=ExtResource("4_f0jvk")]
 position = Vector2(1280, -256)
 
-[node name="Player" parent="." unique_id=46163778 instance=ExtResource("1_qxrlw")]
+[node name="Player" parent="." unique_id=46163778 instance=ExtResource("5_2ttum")]
